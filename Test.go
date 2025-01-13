@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-// Стара функціональність
+// Старая функциональность: проверка четного числа
 func checkEvenNumber() {
 	var number int
 	fmt.Println("Введите Ваше число: ")
@@ -16,7 +16,7 @@ func checkEvenNumber() {
 	}
 }
 
-// Новий калькулятор
+// Новая функциональность: калькулятор
 func calculator() {
 	var num1, num2 float64
 	var operator string
@@ -48,20 +48,39 @@ func calculator() {
 	}
 }
 
+// Новая задача: классификация числа
+func classifyNumber() {
+	var number int
+	fmt.Print("Введите число: ")
+	fmt.Scan(&number)
+
+	isPositive := number > 0
+	isEven := number%2 == 0
+	isDivisibleBy5 := number%5 == 0
+
+	fmt.Printf("Положительное: %t\n", isPositive)
+	fmt.Printf("Четное: %t\n", isEven)
+	fmt.Printf("Делится на 5: %t\n", isDivisibleBy5)
+}
+
 func main() {
-	// Вибір функціональності
+	// Выбор действия
 	fmt.Println("Выберите действие:")
 	fmt.Println("1 - Проверить четное число")
 	fmt.Println("2 - Калькулятор")
+	fmt.Println("3 - Классификация числа")
 
 	var choice int
 	fmt.Scan(&choice)
 
-	if choice == 1 {
+	switch choice {
+	case 1:
 		checkEvenNumber()
-	} else if choice == 2 {
+	case 2:
 		calculator()
-	} else {
+	case 3:
+		classifyNumber()
+	default:
 		fmt.Println("Неверный выбор")
 	}
 }
