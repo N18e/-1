@@ -1,12 +1,14 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
-	s := "varrior"
-	var old int = 33
-	fmt.Println("This is", s, "He is",
-		old, "years old")
+	var number int
+	fmt.Println("Введите Ваше число: ")
+	fmt.Scan(&number)
+	if number%2 == 0 {
+		fmt.Printf("Число %d четное: true\n", number)
+	} else {
+		fmt.Printf("Число %d четное: false\n", number)
+	}
 }
