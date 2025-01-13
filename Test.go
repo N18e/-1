@@ -4,72 +4,71 @@ import (
 	"fmt"
 )
 
-// Старая функциональность: проверка четного числа
+// Old functionality: check for even number
 func checkEvenNumber() {
 	var number int
-	fmt.Println("Введите Ваше число: ")
+	fmt.Println("Enter your number: ")
 	fmt.Scan(&number)
 	if number%2 == 0 {
-		fmt.Printf("Число %d четное: true\n", number)
+		fmt.Printf("Number %d is even: true\n", number)
 	} else {
-		fmt.Printf("Число %d четное: false\n", number)
+		fmt.Printf("Number %d is even: false\n", number)
 	}
 }
 
-// Новая функциональность: калькулятор
+// New functionality: calculator
 func calculator() {
 	var num1, num2 float64
 	var operator string
 
-	fmt.Print("Введите первое число: ")
+	fmt.Print("Enter the first number: ")
 	fmt.Scan(&num1)
 
-	fmt.Print("Введите оператор (+, -, *, /): ")
+	fmt.Print("Enter operator (+, -, *, /): ")
 	fmt.Scan(&operator)
 
-	fmt.Print("Введите второе число: ")
+	fmt.Print("Enter the second number: ")
 	fmt.Scan(&num2)
 
 	switch operator {
 	case "+":
-		fmt.Printf("Результат: %.2f\n", num1+num2)
+		fmt.Printf("Result: %.2f\n", num1+num2)
 	case "-":
-		fmt.Printf("Результат: %.2f\n", num1-num2)
+		fmt.Printf("Result: %.2f\n", num1-num2)
 	case "*":
-		fmt.Printf("Результат: %.2f\n", num1*num2)
+		fmt.Printf("Result: %.2f\n", num1*num2)
 	case "/":
 		if num2 == 0 {
-			fmt.Println("Ошибка: деление на ноль")
+			fmt.Println("Error: division by zero")
 		} else {
-			fmt.Printf("Результат: %.2f\n", num1/num2)
+			fmt.Printf("Result: %.2f\n", num1/num2)
 		}
 	default:
-		fmt.Println("Ошибка: недопустимый оператор")
+		fmt.Println("Error: invalid operator")
 	}
 }
 
-// Новая задача: классификация числа
+// New task: classify a number
 func classifyNumber() {
 	var number int
-	fmt.Print("Введите число: ")
+	fmt.Print("Enter a number: ")
 	fmt.Scan(&number)
 
 	isPositive := number > 0
 	isEven := number%2 == 0
 	isDivisibleBy5 := number%5 == 0
 
-	fmt.Printf("Положительное: %t\n", isPositive)
-	fmt.Printf("Четное: %t\n", isEven)
-	fmt.Printf("Делится на 5: %t\n", isDivisibleBy5)
+	fmt.Printf("Positive: %t\n", isPositive)
+	fmt.Printf("Even: %t\n", isEven)
+	fmt.Printf("Divisible by 5: %t\n", isDivisibleBy5)
 }
 
 func main() {
-	// Выбор действия
-	fmt.Println("Выберите действие:")
-	fmt.Println("1 - Проверить четное число")
-	fmt.Println("2 - Калькулятор")
-	fmt.Println("3 - Классификация числа")
-
+	// Select an action
+	fmt.Println("Select an action:")
+	fmt.Println("1 - Check if the number is even")
+	fmt.Println("2 - Calculator")
+	fmt.Println("3 - Classification of number")
 	var choice int
 	fmt.Scan(&choice)
 
@@ -81,6 +80,6 @@ func main() {
 	case 3:
 		classifyNumber()
 	default:
-		fmt.Println("Неверный выбор")
+		fmt.Println("Wrong choice")
 	}
 }
