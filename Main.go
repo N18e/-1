@@ -16,6 +16,7 @@ func main() {
 	fmt.Println("4 - Print numbers in a range, skipping multiples of 3")
 	fmt.Println("5 - Calculate the sum and product of numbers")
 	fmt.Println("6 - Multiplication Table")
+	fmt.Println("7 - Ball")
 	var choice int
 	fmt.Scan(&choice)
 
@@ -32,7 +33,8 @@ func main() {
 		calculateSumAndProduct()
 	case 6:
 		MultiplicationTable()
-
+	case 7:
+		Ball()
 	default:
 		fmt.Println("Invalid choice")
 	}
